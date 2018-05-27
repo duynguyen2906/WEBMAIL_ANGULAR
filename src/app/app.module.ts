@@ -23,7 +23,6 @@ import { EmailService } from './email.service';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),

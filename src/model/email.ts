@@ -3,5 +3,5 @@ export class Email{
     subject: string;
     email : string;
     name: string;
-    messsage: string;
+    message: string;
 }

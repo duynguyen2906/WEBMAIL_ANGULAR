@@ -1,19 +1,26 @@
 {
-  "posts": [
+  "email": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "subject": "test",
+      "email": "duy@test",
+      "name": "DUY",
+      "messsage": "test"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "subject": "test",
+      "email": "duy@test",
+      "name": "DUY",
+      "messsage": "test"
+    },
+    {
+      "id": 3,
+      "subject": "test",
+      "email": "duy@test",
+      "name": "DUY",
+      "messsage": "test"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+    
+  ]
 }

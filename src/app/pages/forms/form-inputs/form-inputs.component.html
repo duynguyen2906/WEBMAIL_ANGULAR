@@ -2,25 +2,25 @@
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <nb-card>
-        <nb-card-header>New Email</nb-card-header>
+        <nb-card-header>New Mail</nb-card-header>
         <nb-card-body>
           <div class="input-group">
-            <input required  ngModel #subject="ngModel" (change)="log(subject)" name="subject" id="subject" type="text" placeholder="Subject" class="form-control"/>
+            <input required  ngModel #Subject="ngModel" (change)="log(Subject)" Name="Subject" id="Subject" type="text" placeholder="Subject" class="form-control"/>
           </div>
-          <div class="alert alert-danger" *ngIf="!subject.valid&&subject.touched">Please Enter Subject!</div>
+          <div class="alert alert-danger" *ngIf="!Subject.valid&&Subject.touched">Please Enter Subject!</div>
           <div class="input-group">
-            <input required ngModel #name="ngModel" (change)="log(name)" name="name" id="name" type="text" placeholder="Your Name" class="form-control"/>
+            <input required ngModel #Name="ngModel" (change)="log(Name)" Name="Name" id="Name" type="text" placeholder="Your Name" class="form-control"/>
           </div>
-          <div class="alert alert-danger" *ngIf="!name.valid&&name.touched">Please Enter Your Name!</div>
+          <div class="alert alert-danger" *ngIf="!Name.valid&&Name.touched">Please Enter Your Name!</div>
           <div class="input-group">
-            <input required ngModel #email="ngModel" email pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" (change)="log(email)" name="email" id="email" type="email" placeholder="Your Email" class="form-control"/>
+            <input required ngModel #Mail="ngModel" Mail pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" (change)="log(Mail)" Name="Mail" id="Mail" type="Mail" placeholder="Your Mail" class="form-control"/>
           </div>
-          <div class="alert alert-danger" *ngIf="!email.valid&&email.touched">Email invalid!</div>
+          <div class="alert alert-danger" *ngIf="!Mail.valid&&Mail.touched">Mail invalid!</div>
           <div class="input-group">
-            <textarea required ngModel #message="ngModel" (change)="log(message)" name="message" id="message" rows="5" placeholder="Your messages" class="form-control"></textarea>
+            <textarea required ngModel #Message="ngModel" (change)="log(Message)" Name="Message" id="Message" rows="5" placeholder="Your Messages" class="form-control"></textarea>
           </div>
-          <div class="alert alert-danger" *ngIf="!message.valid&&message.touched">Please Enter Messages!</div>
-          <button [disabled]="!myForm.valid" (click)="creatMailFromService(email.value,message.value,name.value,subject.value)" _ngcontent-c16="" class="btn btn-hero-danger btn-demo col-md-6 offset-md-3" ng-reflect-value="middle">Send</button>
+          <div class="alert alert-danger" *ngIf="!Message.valid&&Message.touched">Please Enter Messages!</div>
+          <button [disabled]="!myForm.valid" (click)="add(Mail.value,Message.value,Name.value,Subject.value)" _ngcontent-c16="" class="btn btn-hero-danger btn-demo col-md-6 offset-md-3" ng-reflect-value="middle">Send</button>
         </nb-card-body>
       </nb-card>
   
