@@ -15,7 +15,7 @@ export class EmailService {
   };
   getMovies(): Observable<Email[]> {
     return this.http.get<Email[]>(this.emailURL).pipe(
-      tap(receivedMovies => console.log(`receivedMovies = ${JSON.stringify(receivedMovies)}`)),
+      tap(receivedEmail => console.log(`receivedEmail = ${JSON.stringify(receivedEmail)}`)),
       catchError(error => of([]))
     );
   }
