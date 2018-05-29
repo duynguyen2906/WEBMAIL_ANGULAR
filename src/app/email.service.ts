@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Email} from '../model/email'
+import {  Email} from '../model/email'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
@@ -16,7 +16,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class EmailService {
-  private emailURL='http://localhost:3000/posts';
+  private emailURL='http://localhost:3000/email';
+  mail: Observable <any>;
 
   constructor(private http: HttpClient){
     
@@ -27,12 +28,18 @@ export class EmailService {
       catchError(error => of([]))
     );
   };
-  addEmail(newEmail:Email):Observable<Email>{
-    return this.http.post<Email>(this.emailURL,newEmail,httpOptions).pipe(
-      tap((email: Email) => console.log(`inserted movie = ${JSON.stringify(email)}`)),
-      catchError(error => of(new Email()))
-    );
+  addEmail(Subject: string, Mail : string, Name: string, Message: string) {
+    const data: Email = {
+      id: null,
+      name: Name,
+      subject: Subject,
+      message: Message,
+      email: Mail
+    }
+    return this.http.post<any>(this.emailURL, data).subscribe(value => { this.mail = value; alert("SENDING...") });
 
-  }
+  };
+  
+
 
 }
