@@ -17,7 +17,7 @@ const httpOptions = {
 })
 export class EmailService {
   private emailURL='http://localhost:3000/email';
-  mail: Observable <any>;
+  emails: Observable <any>; // dữ liệu bất đồng bộ
 
   constructor(private http: HttpClient){
     
@@ -36,10 +36,12 @@ export class EmailService {
       message: Message,
       email: Mail
     }
-    return this.http.post<any>(this.emailURL, data).subscribe(value => { this.mail = value; alert("SENDING...") });
+    return this.http.post<any>(this.emailURL, data).subscribe(value => { this.emails = value; alert("SENDING EMAIL...") });
 
   };
-  
-
+  getData(): Observable<any>{
+    return this.http.get<any>(this.emailURL).pipe()
+  };
 
 }
+

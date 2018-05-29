@@ -4,7 +4,26 @@
   </nb-card-header>
 
   <nb-card-body>
-    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
-    </ng2-smart-table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr style="color: #00CC33;" class="tableborder">
+          <th width="3%" class="item">ID</th>
+          <th width="25%" class="item" >Subject</th>
+          <th width="15%" class="item" >Name</th>
+          <th width="20%" class="item" >Email</th>
+          <th width="33%" class="item" >Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of emails "> <!-- emails la data bat dong bo nhan tu smart-table.ts -->
+          <td style="text-align: center" width="3%" >{{row.id|json}}</td>
+          <td style="text-align: center" width="25%" >{{row.subject|json| slice:0:20}}</td>
+          <td style="text-align: center" width="15%" >{{row.name|json| slice:0:20}}</td>
+          <td style="text-align: center" width="20%">{{row.email|json| slice:0:20}}{{row.email.length < 20 ? '' : '...'}}</td>
+          <td width="37%" >{{row.message|json| slice:0:50}}{{row.message.length < 50 ? '' : '...'}}</td>
+        </tr>
+       
+      </tbody>
+    </table>
   </nb-card-body>
 </nb-card>

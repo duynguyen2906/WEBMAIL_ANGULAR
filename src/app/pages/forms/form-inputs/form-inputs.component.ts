@@ -19,7 +19,7 @@ export class FormInputsComponent implements OnInit {
   starRate = 2;
   heartRate = 4;
   private emailURL='http://localhost:3000/email';
-  mail: Observable<any>;
+  emails: Observable<any>;
   constructor(private emailService : EmailService){
   }
  

@@ -3,6 +3,8 @@ import { LocalDataSource } from 'ng2-smart-table';
 
 import { SmartTableService } from '../../../@core/data/smart-table.service';
 import { EmailService } from '../../../email.service';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'ngx-smart-table',
@@ -15,57 +17,13 @@ import { EmailService } from '../../../email.service';
 })
 export class SmartTableComponent {
 
-  settings = {
-    add: {
-      addButtonContent: '<i class="nb-plus"></i>',
-      createButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-    },
-    edit: {
-      editButtonContent: '<i class="nb-edit"></i>',
-      saveButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-    },
-    delete: {
-      deleteButtonContent: '<i class="nb-trash"></i>',
-      confirmDelete: true,
-    },
-    columns: {
-      id: {
-        title: 'ID',
-        type: 'number',
-      },
-      subject: {
-        title: 'Subject',
-        type: 'string',
-      },
-      name: {
-        title: 'Name',
-        type: 'string',
-      },
-      email: {
-        title: 'Email',
-        type: 'string',
-      },
-      message: {
-        title: 'Message',
-        type: 'string',
-      },
-    },
-  };
-
-  source: LocalDataSource = new LocalDataSource();
-
-  constructor(private service: SmartTableService) {
-    const data = this.service.getData();
-    this.source.load(data);
+  
+  emails: Observable<any>;
+  constructor(private emailService: EmailService,private http: HttpClient) {
   }
+  ngOnInit(){
 
-  onDeleteConfirm(event): void {
-    if (window.confirm('Are you sure you want to delete?')) {
-      event.confirm.resolve();
-    } else {
-      event.confirm.reject();
-    }
+    this.emailService.getData().subscribe(value => {this.emails=value});
+
   }
 }

@@ -20,7 +20,7 @@
             <textarea required ngModel #Message="ngModel" (change)="log(Message)" name="Message" id="Message" rows="5" placeholder="Your Messages" class="form-control"></textarea>
           </div>
           <div class="alert alert-danger" *ngIf="!Message.valid&&Message.touched">Please Enter Messages!</div>
-          <button  [disabled]="emailForm.form.valid"(click)="add(Subject.value,Mail.value,Name.value,Message.value)" _ngcontent-c16="" class="btn btn-hero-danger btn-demo col-md-6 offset-md-3" ng-reflect-value="middle">Send</button>
+          <button  (click)="add(Subject.value,Mail.value,Name.value,Message.value)" _ngcontent-c16="" class="btn btn-hero-danger btn-demo col-md-6 offset-md-3" ng-reflect-value="middle">Send</button>
         </nb-card-body>
       </nb-card>
   

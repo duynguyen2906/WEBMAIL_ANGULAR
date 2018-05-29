@@ -2,80 +2,10 @@
   "email": [
     {
       "id": 1,
-      "subject": "test",
-      "email": "duy@test",
-      "name": "DUY",
-      "messsage": "test"
-    },
-    {
-      "id": 2,
-      "subject": "test",
-      "email": "duy@test",
-      "name": "DUY",
-      "messsage": "test"
-    },
-    {
-      "id": 3,
-      "subject": "test",
-      "email": "duy@test",
-      "name": "DUY",
-      "messsage": "test"
-    },
-    {
-      "id": 4,
-      "name": null,
-      "subject": null,
-      "message": null,
-      "email": null
-    },
-    {
-      "id": 5,
-      "name": null,
-      "subject": null,
-      "message": null,
-      "email": null
-    },
-    {
-      "id": 6,
-      "name": null,
-      "subject": null,
-      "message": null,
-      "email": null
-    },
-    {
-      "id": 7,
-      "name": "duy",
-      "subject": "duy",
-      "message": "123456",
-      "email": "duy@duy.com"
-    },
-    {
-      "id": 8,
-      "name": "Duy",
-      "subject": "duy",
-      "message": "test",
-      "email": "duy@duy.com"
-    },
-    {
-      "id": 9,
-      "name": "",
-      "subject": "",
-      "message": "",
-      "email": ""
-    },
-    {
-      "id": 10,
-      "name": "",
-      "subject": "",
-      "message": "",
-      "email": ""
-    },
-    {
-      "id": 11,
-      "name": "",
-      "subject": "aaa",
-      "message": "",
-      "email": ""
+      "name": "Duy Nguyen",
+      "subject": "Hello",
+      "message": "Hello.This is a test mail.",
+      "email": "duy@test.com"
     }
   ]
 }
