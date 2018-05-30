@@ -1,20 +1,18 @@
 import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
-  
+ 
   {
     title: 'Write Email',
     icon: 'nb-compose',
-        link: '/pages/forms/inputs',
+    link: '/pages/forms/inputs',
   },
- 
   {
     title: 'Sent Box',
     icon: 'nb-tables',
-  link: '/pages/tables/smart-table',
+    link: '/pages/tables/smart-table',
+    home: true,
   },
-   
-  
   {
     title: 'Auth',
     icon: 'nb-locked',

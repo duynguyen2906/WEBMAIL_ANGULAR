@@ -1,22 +1,20 @@
 @import '../../styles/themes';
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+@import '../../../@theme/styles/themes';
+
+:host {
+
+  background: #FF9933;
+  box-shadow: 0 0 1px 0 rgba(115, 255, 208, 0);
+  border-radius: 10px 10px 10px 10px;
+  color: chartreuse;
+}
 
 @include nb-install-component() {
   display: flex;
   justify-content: space-between;
   width: 100%;
-
-  .left {
-    display: flex;
-    width: 100%;
-    order: 0;
-    flex-direction: row;
-  }
-  .right {
-    order: 1;
-    flex-direction: row-reverse;
-  }
 
   .logo-containter {
     display: flex;
@@ -30,7 +28,7 @@
   .header-container {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 200%;
 
     .navigation {
       @include nb-ltr(padding-right, nb-theme(padding));
@@ -58,50 +56,13 @@
     }
   }
 
-  ngx-layout-direction-switcher,
-  ngx-theme-switcher {
-    margin: 0 1em;
-  }
-
-  @include media-breakpoint-down(xl) {
-    ngx-layout-direction-switcher {
-      display: none;
-    }
-  }
+  
 
   .toggle-layout /deep/ a {
     display: block;
     text-decoration: none;
     line-height: 1;
 
-    i {
-      color: nb-theme(color-fg-highlight);
-      font-size: 2.25rem;
-      border-radius: 50%;
-      position: relative;
-      animation-name: pulse-light;
-
-      &::after {
-        content: ' ';
-        // hack to be able to set border-radius
-        background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
-        border-radius: 50%;
-        pointer-events: none;
-
-        position: absolute;
-        top: 52.3%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 13%;
-        height: 13%;
-
-        animation: 3s linear infinite pulse;
-
-        @include nb-for-theme(default) {
-          animation-name: pulse-light;
-        }
-      }
-    }
   }
 
   @include keyframes(pulse) {
