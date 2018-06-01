@@ -6,6 +6,20 @@
       "subject": "Hello",
       "message": "Hello.This is a test mail.",
       "email": "duy@test.com"
+    },
+    {
+      "id": 2,
+      "name": "DuyNTT",
+      "subject": "TEST",
+      "message": "Hello",
+      "email": "duyntt@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "TEST NAME",
+      "subject": "TEST",
+      "message": "Test content",
+      "email": "duy@test.com"
     }
   ]
 }

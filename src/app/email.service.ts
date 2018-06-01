@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {  Email} from '../model/email'
+import {  Email, CreateEmail, IEmail} from '../model/email'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
@@ -22,25 +22,25 @@ export class EmailService {
   constructor(private http: HttpClient){
     
   };
-  getMail(): Observable<Email[]> {
-    return this.http.get<Email[]>(this.emailURL).pipe(
+  getMail(): Observable<IEmail[]> {
+    return this.http.get<IEmail[]>(this.emailURL).pipe(
       tap(receivedEmail => console.log(`receivedEmail = ${JSON.stringify(receivedEmail)}`)),
       catchError(error => of([]))
     );
   };
   addEmail(Subject: string, Mail : string, Name: string, Message: string) {
-    const data: Email = {
+    
+    return this.http.post<any>(this.emailURL, CreateEmail({
       id: null,
       name: Name,
       subject: Subject,
       message: Message,
       email: Mail
-    }
-    return this.http.post<any>(this.emailURL, data).subscribe(value => { this.emails = value; alert("SENDING EMAIL...") });
+    })).subscribe(value => { this.emails = value; alert("SENDING EMAIL...") });
 
   };
   getData(): Observable<any>{
-    return this.http.get<any>(this.emailURL).pipe()
+    return this.http.get<IEmail[]>(this.emailURL).pipe()
   };
 
 }
